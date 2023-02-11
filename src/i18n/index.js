@@ -23,7 +23,6 @@ function loadLocaleMessages() {
     lang[matched[2]] = locales(key)
     messages[matched[1]] = lang
   })
-  console.log(messages)
   return messages
 }
 
@@ -31,5 +30,6 @@ export default createI18n({
   legacy: false,
   locale: process.env.VUE_APP_I18N_LOCALE || 'ko',
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'ko',
-  messages: loadLocaleMessages()
+  messages: loadLocaleMessages(),
+  warnHtmlMessage: false,
 })
